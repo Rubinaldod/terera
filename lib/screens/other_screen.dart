@@ -15,7 +15,7 @@ class OtherScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Welcome, ' + atSign,
+          'Hello, ' + atSign,
         ),
       ),
       body: SafeArea(
