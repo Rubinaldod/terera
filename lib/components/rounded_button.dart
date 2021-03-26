@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
-
   final Function path;
   final String text;
   final Color color;
@@ -16,7 +15,7 @@ class RoundedButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: Material(
         elevation: 5.0,
-        color: this.color == null ? Color(0XFFE4D8CC) : this.color,
+        color: this.color == null ? Colors.blue : this.color,
         borderRadius: BorderRadius.circular(30.0),
         child: MaterialButton(
           onPressed: this.path,
@@ -25,7 +24,8 @@ class RoundedButton extends StatelessWidget {
           child: Text(
             this.text,
             style: TextStyle(
-              color: this.color != Color(0XFFF1EBE5) ? Colors.white : Colors.black,
+              color:
+                  this.color != Color(0XFFF1EBE5) ? Colors.white : Colors.black,
             ),
           ),
         ),

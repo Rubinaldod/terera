@@ -1,9 +1,8 @@
-//import 'package:chefcookbook/screens/add_dish_screen.dart';
+import 'package:terera/screens/add_playlist.dart';
 import 'package:terera/screens/home_screen.dart';
-//import 'package:chefcookbook/screens/other_screen.dart';
-//import 'package:chefcookbook/screens/share_screen.dart';
 import 'package:terera/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:terera/screens/other_screen.dart';
 
 void main() async {
   runApp(MyApp());
@@ -23,8 +22,8 @@ class MyApp extends StatelessWidget {
         routes: {
           WelcomeScreen.id: (context) => WelcomeScreen(),
           HomeScreen.id: (context) => HomeScreen(),
-
-        }
-    );
+          DishScreen.id: (context) => DishScreen(),
+          OtherScreen.id: (context) => OtherScreen(),
+        });
   }
 }

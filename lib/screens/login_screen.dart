@@ -13,7 +13,6 @@ class WelcomeScreen extends StatefulWidget {
   static final String id = 'welcome';
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
-
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
@@ -30,62 +29,42 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget> [
-                  Expanded(
-                      flex: 1,
-                      child: Container()
-                  ),
+                children: <Widget>[
+                  Expanded(flex: 1, child: Container()),
                   Expanded(
                     flex: 5,
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Container(
                         width: MediaQuery.of(context).size.width,
-                        child: Column(
-                            children: <Widget> [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget> [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 16),
-                                    child: Text(
-                                      'Chef\'s',
-                                      style: TextStyle(
-                                        fontSize: 64,
-                                        fontWeight: FontWeight.bold,
-                                        color: Color(0XFF956532),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 150,
-                                    width: 90,
-                                    child: Hero(
-                                      tag: 'chef',
-                                      child: Image.asset(
-                                        'assets/chef.png',
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                        child: Column(children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16),
                               ),
-                              Container(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 16),
-                                  child: Text(
-                                    'Cookbook',
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      fontSize: 64,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color(0XFF956532),
-                                    ),
-                                  ),
+                              SizedBox(
+                                height: 150,
+                                width: 90,
+                              ),
+                            ],
+                          ),
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                'Terera',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontSize: 64,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0XFF956532),
                                 ),
                               ),
-                            ]
-                        ),
+                            ),
+                          ),
+                        ]),
                       ),
                     ),
                   ),
@@ -100,7 +79,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ListTile(
                           title: Center(
                             child: DropdownButton<String>(
-                              hint:  Text('\tPick an @sign'),
+                              hint: Text('\tPick an @sign'),
                               icon: Icon(
                                 Icons.keyboard_arrow_down,
                               ),
@@ -108,9 +87,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               dropdownColor: Color(0XFFF1EBE5),
                               elevation: 16,
                               style: TextStyle(
-                                  fontSize: 20.0,
-                                  color: Colors.black87
-                              ),
+                                  fontSize: 20.0, color: Colors.black87),
                               onChanged: (String newValue) {
                                 setState(() {
                                   atSign = newValue;
@@ -118,7 +95,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               },
                               value: atSign != null ? atSign : null,
                               items: at_demo_data.allAtsigns
-                                  .map<DropdownMenuItem<String>>((String value) {
+                                  .map<DropdownMenuItem<String>>(
+                                      (String value) {
                                 return DropdownMenuItem<String>(
                                   value: value,
                                   child: Text(value),
@@ -140,22 +118,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                     ),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: Center(
-                        child: Image.asset(
-                          'assets/@logo.png',
-                          height: 30,
-                        )
-                    ),
-                  )
-                ]
-            ),
+                ]),
           ),
         ),
       ),
     );
   }
+
   _login() async {
     FocusScope.of(context).unfocus();
     setState(() {
